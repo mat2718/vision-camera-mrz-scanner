@@ -1,5 +1,5 @@
 import {Platform} from 'react-native';
-import type {Dimensions, Rect} from 'src/types/types';
+import type {Dimensions, Rect} from '../types/types';
 
 /**
  * It takes a frame and a view, and returns an object with two functions: adjustPoint and adjustRect

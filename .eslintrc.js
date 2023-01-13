@@ -12,5 +12,5 @@ module.exports = {
   globals: {
     AbortController: 'readonly',
   },
-  ignorePatterns: ['docs/*', 'downloads/*', 'node_modules/', 'lib/'],
+  ignorePatterns: ['docs/', 'downloads/', 'node_modules/', 'lib/'],
 };
