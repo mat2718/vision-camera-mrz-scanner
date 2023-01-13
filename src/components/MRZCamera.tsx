@@ -20,18 +20,25 @@ import {
 import {runOnJS} from 'react-native-reanimated';
 import {
   Camera,
-  CameraProps,
+  Frame,
   useCameraDevices,
   useFrameProcessor,
 } from 'react-native-vision-camera';
-import type {MRZCameraProps} from 'src/types/types';
 import {
+  boundingBoxAdjustToView,
+  BoundingFrame,
+  Dimensions,
+  MRZCameraProps,
   MRZFrame,
   scanMRZ,
   sortFormatsByResolution,
 } from 'vision-camera-mrz-scanner';
 
 const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
+  enableBoundingBox,
+  boundingBoxStyle,
+  boundingBoxHorizontalPadding,
+  boundingBoxVerticalPadding,
   style,
   skipButtonEnabled: photoSkipButtonEnabled,
   skipButton: photoSkipButton,
@@ -41,6 +48,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   onData,
   scanSuccess,
   skipButtonText,
+  cameraDirection,
 }) => {
   //*****************************************************************************************
   //  setting up the state
@@ -49,19 +57,23 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   const [hasPermission, setHasPermission] = React.useState(false);
   // camera states
   const devices = useCameraDevices();
-  const direction: 'front' | 'back' = 'front';
+  const direction: 'front' | 'back' = cameraDirection ?? 'back';
   const device = devices[direction];
   const camera = useRef<Camera>(null);
   const {height: screenHeight, width: screenWidth} = useWindowDimensions();
-  const landscapeMode = screenWidth > screenHeight;
   const [isActive, setIsActive] = useState(true);
   const [feedbackText, setFeedbackText] = useState<string>('');
   const [scanning, setScanning] = useState(false);
+  const [ocrElements, setOcrElements] = useState<BoundingFrame[]>([]);
+  const [frameDimensions, setFrameDimensions] = useState<Dimensions>();
+  const landscapeMode = screenWidth > screenHeight;
 
   //*****************************************************************************************
   // Comp Logic
   //*****************************************************************************************
 
+  // const xRatio = frame.width / WINDOW_WIDTH;
+  // const yRatio = frame.height / WINDOW_HEIGHT;
   /* A cleanup function that is called when the component is unmounted. */
   useEffect(() => {
     return () => {
@@ -84,28 +96,50 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
    * Prevents sending copious amounts of scans
    */
   const handleScan = useCallback(
-    (data: MRZFrame) => {
+    (data: MRZFrame, frame: Frame) => {
+      const isRotated = !landscapeMode;
+      setFrameDimensions(
+        isRotated
+          ? {
+              width: frame.height,
+              height: frame.width,
+            }
+          : {
+              width: frame.width,
+              height: frame.height,
+            },
+      );
       if (data.result.blocks.length === 0) {
         setFeedbackText('');
       }
+
+      let updatedOCRElements: BoundingFrame[] = [];
       data.result.blocks.forEach(block => {
         if (block.frame.width / screenWidth < 0.8) {
           setFeedbackText('Hold Still');
         } else {
           setFeedbackText('Scanning...');
         }
+        updatedOCRElements.push({...block.frame});
       });
 
       /* Scanning the text from the image and then setting the state of the component. */
-      if (!scanSuccess && !scanning) {
+      if (!scanning) {
         setScanning(true);
         if (data && data.result && data.result.blocks.length > 0) {
+          console.log('data.result.blocks: ', data.result.blocks);
           let lines: string[] = [];
           data.result.blocks.forEach(block => {
             lines.push(block.text);
           });
-          if (lines.length > 0 && isActive) {
+          if (lines.length > 0 && isActive && onData) {
+            console.log('lines: ', lines);
+            console.log('updatedOCRElements: ', updatedOCRElements);
+            setOcrElements(updatedOCRElements);
             onData(lines);
+          } else {
+            console.log('why am i here?');
+            setOcrElements([]);
           }
         }
       }
@@ -127,10 +161,17 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       'worklet';
 
       const ocrData = scanMRZ(frame);
-      runOnJS(handleScan)(ocrData);
+      runOnJS(handleScan)(ocrData, frame);
     },
-    [scanSuccess, isActive],
+    [handleScan],
   );
+
+  useEffect(() => {
+    (async () => {
+      const status = await Camera.requestCameraPermission();
+      setHasPermission(status === 'authorized');
+    })();
+  }, []);
 
   /* Using the useMemo hook to create a style object. */
   const boundingStyle = useMemo<StyleProp<ViewStyle>>(
@@ -143,13 +184,6 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
     }),
     [screenWidth, screenHeight],
   );
-
-  useEffect(() => {
-    (async () => {
-      const status = await Camera.requestCameraPermission();
-      setHasPermission(status === 'authorized');
-    })();
-  }, []);
 
   //*****************************************************************************************
   // stylesheet
@@ -181,6 +215,16 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       paddingRight: 8,
       paddingLeft: 8,
       textAlign: 'center',
+    },
+    boundingBox: {
+      borderRadius: 5,
+      borderWidth: 3,
+      borderColor: 'yellow',
+      position: 'absolute',
+      // left: ocrElements[0] ? ocrElements[0].x - horizontalOffset : 0,
+      // top: ocrElements[0] ? ocrElements[0].y - verticalOffset : 0,
+      // height: ocrElements[0] ? ocrElements[0].height + heightPadding : 0,
+      // width: ocrElements[0] ? ocrElements[0].width + widthPadding : 0,
     },
   });
 
@@ -223,6 +267,42 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
           frameProcessorFps={cameraProps?.frameProcessorFps ?? 10}
         />
       ) : undefined}
+      <View style={[styles.boundingBox]} />
+      {enableBoundingBox && ocrElements.length > 0 ? (
+        <View style={boundingStyle} testID="faceDetectionBoxView">
+          {frameDimensions &&
+            (() => {
+              const {adjustRect} = boundingBoxAdjustToView(
+                frameDimensions,
+                {
+                  width: landscapeMode ? screenHeight : screenWidth,
+                  height: landscapeMode ? screenWidth : screenHeight,
+                },
+                landscapeMode,
+                boundingBoxVerticalPadding,
+                boundingBoxHorizontalPadding,
+              );
+              return ocrElements
+                ? ocrElements.map((i, index) => {
+                    const {left, ...others} = adjustRect(i);
+                    return (
+                      <View
+                        key={index}
+                        style={[
+                          styles.boundingBox,
+                          {
+                            ...others,
+                            left: left,
+                          },
+                          boundingBoxStyle,
+                        ]}
+                      />
+                    );
+                  })
+                : undefined;
+            })()}
+        </View>
+      ) : null}
       {photoSkipButton ? (
         <View style={[styles.fixToText]}>
           {photoSkipButtonEnabled ? (

@@ -1,8 +1,13 @@
 // logging import and setup
 import {ListItemData} from '../constants/listItemData';
 
-const countryIsoJson = require('../../assets/referanceValues/CountryIsoCodes.json');
+const countryIsoJson = require('../constants/CountryIsoCodes.json');
 
+/**
+ * It takes a string, and returns a number
+ * @param {string} text - The text to be encoded.
+ * @returns The checkSum function returns the check sum of the input string.
+ */
 export const checkSum = (text: string) => {
   let value = 0;
   let isNumber = /([0-9])/;
@@ -32,18 +37,21 @@ export const checkSum = (text: string) => {
   return value;
 };
 
-/**
- * Extracts information from a 2-line MRZ or a 3-line MRZ
- * @param initialLines
- */
 export const parseMRZ = (initialLines: string[]) => {
   let lines: string[] = [];
+  const firstInitialLastLine = initialLines[initialLines.length - 1];
+  const secondInitialLastLine = initialLines[initialLines.length - 2];
   // if lines.length >= 2, extract and parse two-line MRZ
-  if (initialLines.length >= 2) {
+  if (
+    initialLines &&
+    initialLines.length >= 2 &&
+    firstInitialLastLine &&
+    secondInitialLastLine
+  ) {
     // return undefined if a double left angle bracket character is found in either last line, or second to last line.
     if (
-      initialLines[initialLines.length - 1].indexOf('«') !== -1 ||
-      initialLines[initialLines.length - 2].indexOf('«') !== -1
+      firstInitialLastLine.indexOf('«') !== -1 ||
+      secondInitialLastLine.indexOf('«') !== -1
     ) {
       return undefined;
     }
@@ -63,44 +71,71 @@ export const parseMRZ = (initialLines: string[]) => {
       }
       lines.push(line);
     });
+
     // parse 2 line MRZ if the current line, and the previous line  both have 43, 44, or 45 characters
     for (let i = 1; i < lines.length; i++) {
-      if (
-        (lines[i].length > 42 &&
-          lines[i].length < 46 &&
-          lines[i - 1].length > 42 &&
-          lines[i - 1].length < 46) ||
-        (lines[i].length > 35 &&
-          lines[i].length < 37 &&
-          lines[i - 1].length > 35 &&
-          lines[i - 1].length < 37)
-      ) {
-        return parse2LineMRZ(lines[i - 1], lines[i]);
+      const currentLine = lines[i];
+      const lastLine = lines[i - 1];
+      if (currentLine && lastLine) {
+        if (
+          (currentLine.length > 42 &&
+            currentLine.length < 46 &&
+            lastLine.length > 42 &&
+            lastLine.length < 46) ||
+          (currentLine.length > 35 &&
+            currentLine.length < 37 &&
+            lastLine.length > 35 &&
+            lastLine.length < 37)
+        ) {
+          return parse2LineMRZ(lastLine, currentLine);
+          // return parse([lastLine, currentLine]);
+        }
       }
     }
   } // end (lines.length >= 2)
   if (lines.length >= 3) {
     // At this point, empty spaces will already be removed and all letters will be capitalized.
     // return undefined if a double left angle bracket character is found in third to last line.
-    if (lines[lines.length - 3].indexOf('«') !== -1) {
+    const thirdToLastLine = lines[lines.length - 3];
+    if (thirdToLastLine && thirdToLastLine.indexOf('«') !== -1) {
       return undefined;
     }
     for (let i = 2; i < lines.length; i++) {
-      if (
-        lines[i].length > 28 &&
-        lines[i].length < 32 &&
-        lines[i - 1].length > 28 &&
-        lines[i - 1].length < 32 &&
-        lines[i - 2].length > 28 &&
-        lines[i - 2].length < 32
-      ) {
-        return parse3LineMRZ(lines[i - 2], lines[i - 1], lines[i]);
+      const currentLine = lines[i];
+      const lastLine = lines[i - 1];
+      const secondToLastLine = lines[i - 2];
+      if (currentLine && lastLine && secondToLastLine) {
+        if (
+          currentLine.length > 28 &&
+          currentLine.length < 32 &&
+          lastLine.length > 28 &&
+          lastLine.length < 32 &&
+          secondToLastLine.length > 28 &&
+          secondToLastLine.length < 32
+        ) {
+          return parse3LineMRZ(secondToLastLine, lastLine, currentLine);
+          // return parse([secondToLastLine, lastLine, currentLine]);
+        }
       }
     }
   } // end (lines.length >= 3)
   return undefined;
 };
 
+/**
+ * It takes two strings, parses them, and returns an object with the parsed data
+ * @param {string} firstRow - string, secondRow: string
+ * @param {string} secondRow - string =
+ * "P<UTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<<\nL898902C<3UTO6908061F9406236ZE184226B<<<<<14"
+ * @returns an object with the following properties:
+ * docMRZ: `\n`,
+ * docType: docType,
+ * issuingCountry: issuingCountry,
+ * givenNames: givenNames.join(' ').trim(),
+ * lastNames: lastNames.join(' ').trim(),
+ * idNumber: idNumber,
+ * nationality
+ */
 const parse2LineMRZ = (firstRow: string, secondRow: string) => {
   let docType = extractDocType(firstRow);
   let namesFromLine: {givenNames: string[]; lastNames: string[]} =
@@ -146,6 +181,26 @@ const parse2LineMRZ = (firstRow: string, secondRow: string) => {
   };
 };
 
+/**
+ * It takes in three strings, and returns an object with the following properties: docMRZ, docType,
+ * issuingCountry, givenNames, lastNames, idNumber, nationality, dob, gender, docExpirationDate, and
+ * additionalInformation
+ * @param {string} firstRow - string,
+ * @param {string} secondRow - string,
+ * @param {string} thirdRow - string,
+ * @returns An object with the following properties:
+ * docMRZ: string
+ * docType: string
+ * issuingCountry: string
+ * givenNames: string
+ * lastNames: string
+ * idNumber: string
+ * nationality: string
+ * dob: string
+ * gender: string
+ * docExpirationDate: string
+ * additionalInformation: string
+ */
 const parse3LineMRZ = (
   firstRow: string,
   secondRow: string,
@@ -197,18 +252,37 @@ const parse3LineMRZ = (
   };
 };
 
+/**
+ * It takes a string and returns a string
+ * @param {string} line - string - the line of text that we're parsing
+ * @returns the docType.
+ */
 const extractDocType = (line: string) => {
   const docTypeLen: number = line.charAt(1) === '<' ? 1 : 2;
   const docType: string = line.substring(0, docTypeLen);
   return getDocTypeFromCode(docType);
 };
 
+/**
+ * It takes a document code and returns the document type
+ * @param {string} [docCode] - string
+ * @returns The value of the first item in the array that has a codes array that contains the docCode.
+ */
 export const getDocTypeFromCode = (docCode?: string) => {
   return ListItemData.DOCUMENT_TYPE.find(doc =>
     doc.codes.find(code => code === docCode),
   )?.value;
 };
 
+/**
+ * It takes a string, extracts a substring from it, replaces all 'O' with '0', calculates the checksum
+ * of the substring, compares it with the checksum on the document, removes all '<' from the substring,
+ * and returns the substring.
+ * @param {string} line - the line of text that contains the ID number
+ * @param {number} startingIndex - the index of the first character of the ID number
+ * @param {number} endingIndex - the index of the last character of the id number
+ * @returns The ID number.
+ */
 const extractIdNumber = (
   line: string,
   startingIndex: number,
@@ -232,12 +306,26 @@ const extractIdNumber = (
   return idNumber;
 };
 
+/**
+ * A CountryIsoCode is an object with a string property called isoCountryNumber, a string property
+ * called isoCountryCode, and a string property called countryName.
+ * @property {string} isoCountryNumber - The ISO country number.
+ * @property {string} isoCountryCode - The ISO 3166-1 alpha-2 code for the country.
+ * @property {string} countryName - The name of the country.
+ */
 type CountryIsoCode = {
   isoCountryNumber: string;
   isoCountryCode: string;
   countryName: string;
 };
 
+/**
+ * It takes a string, and two numbers, and returns a string.
+ * @param {string} line - string - the line of text that we're parsing
+ * @param {number} startingIndex - the index of the first character of the country code
+ * @param {number} endingIndex - number = line.length,
+ * @returns A function that takes 3 parameters and returns a string.
+ */
 const extractCountry = (
   line: string,
   startingIndex: number,
@@ -259,6 +347,12 @@ const extractCountry = (
   )?.isoCountryCode;
 };
 
+/**
+ * It takes a starting index and a line of text, and returns a date of expiration if it can find one.
+ * @param {number} startingIndex - number,
+ * @param {string} line - string - the line of text that contains the date of expiration
+ * @returns A date string in the format of YYYY-MM-DD
+ */
 const extractDateOfExpirationFromLine = (
   startingIndex: number,
   line: string,
@@ -298,8 +392,16 @@ const extractDateOfExpirationFromLine = (
   if (expDateCheckSum === parseInt(line.charAt(startingIndex + 6), 10)) {
     return docExpirationDate;
   }
+  return undefined;
 };
 
+/**
+ * It takes a starting index and a line of text, and returns a date of birth if the checksum is valid,
+ * otherwise it returns undefined
+ * @param {number} startingIndex - The index of the first character of the date of birth in the line
+ * @param {string} line - the line of text that contains the date of birth
+ * @returns A function that takes two parameters, startingIndex and line.
+ */
 const extractDateOfBirthFromLine = (startingIndex: number, line: string) => {
   // replace all 'O' with '0'
   while (line.substring(startingIndex, startingIndex + 6).indexOf('O') !== -1) {
@@ -328,8 +430,15 @@ const extractDateOfBirthFromLine = (startingIndex: number, line: string) => {
   if (dobCheckSum === parseInt(line.charAt(startingIndex + 6), 10)) {
     return dob;
   }
+  return undefined;
 };
 
+/**
+ * It takes a string and extracts the given names and last names from it.
+ * @param {number} startingIndex - number - the index of the line where the names start
+ * @param {string} line - the line of text that contains the names
+ * @returns An object with two properties: givenNames and lastNames.
+ */
 const extractNamesFromLine = (startingIndex: number, line: string) => {
   let angleBracketCount = 0;
   let lastNamesExtracted = false;
@@ -400,10 +509,16 @@ const extractNamesFromLine = (startingIndex: number, line: string) => {
 
   // ensure 6's, 0's, and 2's are swapped out with G's, O's, and Z'z respectively
   for (let i = 0; i < givenNames.length; i++) {
-    givenNames[i] = replaceNumbersWithCorrespondingLetters(givenNames[i]);
+    const initialGivenName = givenNames[i];
+    if (initialGivenName) {
+      givenNames[i] = replaceNumbersWithCorrespondingLetters(initialGivenName);
+    }
   }
   for (let i = 0; i < lastNames.length; i++) {
-    lastNames[i] = replaceNumbersWithCorrespondingLetters(lastNames[i]);
+    const initialLastName = lastNames[i];
+    if (initialLastName) {
+      lastNames[i] = replaceNumbersWithCorrespondingLetters(initialLastName);
+    }
   }
   return {
     givenNames,
@@ -411,6 +526,11 @@ const extractNamesFromLine = (startingIndex: number, line: string) => {
   };
 };
 
+/**
+ * It replaces all the numbers in a string with their corresponding letters
+ * @param {string} word - string - the word that you want to replace the numbers with letters
+ * @returns The word with the numbers replaced with the corresponding letters.
+ */
 const replaceNumbersWithCorrespondingLetters = (word: string) => {
   while (word.indexOf('0') !== -1) {
     word = word.replace('0', 'O');
@@ -427,6 +547,11 @@ const replaceNumbersWithCorrespondingLetters = (word: string) => {
   return word;
 };
 
+/**
+ * If the letter is '<', return 'U', if the letter is 'H', return 'M', otherwise return the letter
+ * @param {string} letter - string - the letter to extract the gender from
+ * @returns the letter if it is not '<' or 'H'.
+ */
 const extractGender = (letter: string) => {
   if (letter === '<') {
     return 'U';

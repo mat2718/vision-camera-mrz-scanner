@@ -1,9 +1,18 @@
 package com.visioncameramrzscanner
 
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
+import android.annotation.SuppressLint
+import android.graphics.Point
+import android.graphics.Rect
+import android.media.Image
+import androidx.camera.core.ImageProxy
+import com.facebook.react.bridge.WritableNativeArray
+import com.facebook.react.bridge.WritableNativeMap
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
+import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.text.Text
+import com.google.mlkit.vision.text.TextRecognition
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import com.mrousavy.camera.frameprocessor.FrameProcessorPlugin
 
 class VisionCameraMrzScannerPlugin: FrameProcessorPlugin("scanMRZ"){
@@ -79,6 +88,10 @@ private fun getFrame(boundingBox: Rect?): WritableNativeMap {
     if (boundingBox != null) {
         frame.putDouble("x", boundingBox.exactCenterX().toDouble())
         frame.putDouble("y", boundingBox.exactCenterY().toDouble())
+        frame.putInt("top", boundingBox.top)
+        frame.putInt("left", boundingBox.left)
+        frame.putInt("right", boundingBox.right)
+        frame.putInt("bottom", boundingBox.bottom)
         frame.putInt("width", boundingBox.width())
         frame.putInt("height", boundingBox.height())
         frame.putInt("boundingCenterX", boundingBox.centerX())

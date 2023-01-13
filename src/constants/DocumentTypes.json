@@ -1,0 +1,74 @@
+[
+  {
+    "docTypeCode": "1",
+    "docTypeName": "Passport"
+  },
+  {
+    "docTypeCode": "2",
+    "docTypeName": "Birth Certificate"
+  },
+  {
+    "docTypeCode": "3",
+    "docTypeName": "National ID"
+  },
+  {
+    "docTypeCode": "4",
+    "docTypeName": "Drivers License"
+  },
+  {
+    "docTypeCode": "5",
+    "docTypeName": "Other"
+  },
+  {
+    "docTypeCode": "6",
+    "docTypeName": "Social Security Card"
+  },
+  {
+    "docTypeCode": "7",
+    "docTypeName": "ID Card"
+  },
+  {
+    "docTypeCode": "8",
+    "docTypeName": "Visa"
+  },
+  {
+    "docTypeCode": "9",
+    "docTypeName": "Immigrant Visa"
+  },
+  {
+    "docTypeCode": "10",
+    "docTypeName": "Proof of Residency"
+  },
+  {
+    "docTypeCode": "11",
+    "docTypeName": "Alien Registration Card (ARC)"
+  },
+  {
+    "docTypeCode": "12",
+    "docTypeName": "United States Citizen Identification Card"
+  },
+  {
+    "docTypeCode": "13",
+    "docTypeName": "Arrival-Departure Record"
+  },
+  {
+    "docTypeCode": "14",
+    "docTypeName": "Certificate of Naturalization"
+  },
+  {
+    "docTypeCode": "15",
+    "docTypeName": "Advanced Authorization for Parole"
+  },
+  {
+    "docTypeCode": "16",
+    "docTypeName": "Employment Authorization Document"
+  },
+  {
+    "docTypeCode": "17",
+    "docTypeName": "Re-Entry Permit"
+  },
+  {
+    "docTypeCode": "18",
+    "docTypeName": "Voter Registration Card"
+  }
+]

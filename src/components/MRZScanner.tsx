@@ -7,21 +7,24 @@ import {parseMRZ} from '../util/mrzParser';
 
 const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   style,
-  skipButtonEnabled: photoSkipButtonEnabled,
-  skipButton: photoSkipButton,
-  onSkipPressed: photoSkipOnPress,
-  skipButtonStyle: photoSkipButtonStyle,
+  skipButtonEnabled,
+  skipButton,
+  onSkipPressed,
+  skipButtonStyle,
   cameraProps,
   onData,
   scanSuccess,
   skipButtonText,
-} = () => {
+  mrzFinalResults,
+  enableMRZFeedBack,
+  numberOfQAChecks,
+  enableBoundingBox,
+}) => {
   //*****************************************************************************************
   //  setting up the state
   //*****************************************************************************************
 
-  const [scanSuccess, setScanSuccess] = useState(false);
-  const numQAChecks = 3;
+  const numQAChecks = numberOfQAChecks ?? 3;
   const [docMRZQAList, setDocMRZQAList] = useState<(string | undefined)[]>([]);
   const [docTypeQAList, setDocTypeQAList] = useState<(string | undefined)[]>(
     [],
@@ -206,67 +209,78 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   });
 
   return (
-    <View testID="scanDocumentView">
+    <View testID="scanDocumentView" style={StyleSheet.absoluteFill}>
       <MRZCamera
         onData={lines => {
-          const mrzResults = parseMRZ(lines);
-          if (mrzResults) {
-            if (currentMRZMatchesPreviousMRZs(numQAChecks, mrzResults)) {
-              setMRZResults(mrzResults);
-              setScanSuccess(true);
+          if (onData) {
+            onData(lines);
+          } else {
+            const mrzResults = parseMRZ(lines);
+            if (mrzResults) {
+              if (currentMRZMatchesPreviousMRZs(numQAChecks, mrzResults)) {
+                mrzFinalResults(mrzResults);
+              }
             }
           }
         }}
         scanSuccess={scanSuccess}
-        onSkipPressed={() => {}}
-        skipButtonText={'Next'}
+        skipButtonText={skipButtonText}
+        style={[style]}
+        skipButtonEnabled={skipButtonEnabled}
+        skipButtonStyle={skipButtonStyle}
+        skipButton={skipButton}
+        onSkipPressed={onSkipPressed}
+        cameraProps={cameraProps}
+        enableBoundingBox={enableBoundingBox}
       />
-      <View style={styles.feedbackContainer}>
-        <View style={styles.flexRow}>
-          <Text style={[styles.feedbackText, styles.givenNamesQAList]}>
-            {`Given name ${givenNamesQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.lastNamesQAList]}>
-            {`Last name ${lastNamesQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.dobQAList]}>
-            {`DOB ${dobQAList.length} / ${numQAChecks}`}
-          </Text>
+      {enableMRZFeedBack ? (
+        <View style={styles.feedbackContainer}>
+          <View style={styles.flexRow}>
+            <Text style={[styles.feedbackText, styles.givenNamesQAList]}>
+              {`Given name ${givenNamesQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.lastNamesQAList]}>
+              {`Last name ${lastNamesQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.dobQAList]}>
+              {`DOB ${dobQAList.length} / ${numQAChecks}`}
+            </Text>
+          </View>
+          <View style={styles.flexRow}>
+            <Text style={[styles.feedbackText, styles.nationalityQAList]}>
+              {`Nationality ${nationalityQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.idNumberQAList]}>
+              {`ID Number ${idNumberQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.issuingCountryQAList]}>
+              {`Issuing Country ${issuingCountryQAList.length} / ${numQAChecks}`}
+            </Text>
+          </View>
+          <View style={styles.flexRow}>
+            <Text style={[styles.feedbackText, styles.docExpirationDateQAList]}>
+              {`Expiration Date ${docExpirationDateQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text
+              style={[styles.feedbackText, styles.additionalInformationQAList]}>
+              {`Additional Info ${additionalInformationQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.docMRZQAList]}>
+              {`DocMRZ ${docMRZQAList.length} / ${1}`}
+            </Text>
+          </View>
+          <View style={styles.flexRow}>
+            <Text style={[styles.feedbackText, styles.genderQAList]}>
+              {`Gender ${genderQAList.length} / ${numQAChecks}`}
+            </Text>
+            <Text style={[styles.feedbackText, styles.docTypeQAList]}>
+              {`DocType ${docTypeQAList.length} / ${numQAChecks}`}
+            </Text>
+          </View>
         </View>
-        <View style={styles.flexRow}>
-          <Text style={[styles.feedbackText, styles.nationalityQAList]}>
-            {`Nationality ${nationalityQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.idNumberQAList]}>
-            {`ID Number ${idNumberQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.issuingCountryQAList]}>
-            {`Issuing Country ${issuingCountryQAList.length} / ${numQAChecks}`}
-          </Text>
-        </View>
-        <View style={styles.flexRow}>
-          <Text style={[styles.feedbackText, styles.docExpirationDateQAList]}>
-            {`Expiration Date ${docExpirationDateQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text
-            style={[styles.feedbackText, styles.additionalInformationQAList]}>
-            {`Additional Info ${additionalInformationQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.docMRZQAList]}>
-            {`DocMRZ ${docMRZQAList.length} / ${1}`}
-          </Text>
-        </View>
-        <View style={styles.flexRow}>
-          <Text style={[styles.feedbackText, styles.genderQAList]}>
-            {`Gender ${genderQAList.length} / ${numQAChecks}`}
-          </Text>
-          <Text style={[styles.feedbackText, styles.docTypeQAList]}>
-            {`DocType ${docTypeQAList.length} / ${numQAChecks}`}
-          </Text>
-        </View>
-      </View>
+      ) : undefined}
     </View>
   );
-});
+};
 
 export default MRZScanner;

@@ -1,0 +1,1307 @@
+[
+  {
+    "isoCountryNumber": "170",
+    "isoCountryCode": "COL",
+    "countryName": "COLOMBIA"
+  },
+  {
+    "isoCountryNumber": "192",
+    "isoCountryCode": "CUB",
+    "countryName": "CUBA"
+  },
+  {
+    "isoCountryNumber": "484",
+    "isoCountryCode": "MEX",
+    "countryName": "MEXICO"
+  },
+  {
+    "isoCountryNumber": "558",
+    "isoCountryCode": "NIC",
+    "countryName": "NICARAGUA"
+  },
+  {
+    "isoCountryNumber": "604",
+    "isoCountryCode": "PER",
+    "countryName": "PERU"
+  },
+  {
+    "isoCountryNumber": "862",
+    "isoCountryCode": "VEN",
+    "countryName": "VENEZUELA, BOLIVARIAN REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "533",
+    "isoCountryCode": "ABW",
+    "countryName": "ARUBA"
+  },
+  {
+    "isoCountryNumber": "4",
+    "isoCountryCode": "AFG",
+    "countryName": "AFGHANISTAN"
+  },
+  {
+    "isoCountryNumber": "24",
+    "isoCountryCode": "AGO",
+    "countryName": "ANGOLA"
+  },
+  {
+    "isoCountryNumber": "660",
+    "isoCountryCode": "AIA",
+    "countryName": "ANGUILLA"
+  },
+  {
+    "isoCountryNumber": "248",
+    "isoCountryCode": "ALA",
+    "countryName": "ALAND ISLANDS"
+  },
+  {
+    "isoCountryNumber": "8",
+    "isoCountryCode": "ALB",
+    "countryName": "ALBANIA"
+  },
+  {
+    "isoCountryNumber": "20",
+    "isoCountryCode": "AND",
+    "countryName": "ANDORRA"
+  },
+  {
+    "isoCountryNumber": "530",
+    "isoCountryCode": "ANT",
+    "countryName": "ANTILLES (NETHERLANDS)"
+  },
+  {
+    "isoCountryNumber": "784",
+    "isoCountryCode": "ARE",
+    "countryName": "UNITED ARAB EMIRATES"
+  },
+  {
+    "isoCountryNumber": "32",
+    "isoCountryCode": "ARG",
+    "countryName": "ARGENTINA"
+  },
+  {
+    "isoCountryNumber": "51",
+    "isoCountryCode": "ARM",
+    "countryName": "ARMENIA"
+  },
+  {
+    "isoCountryNumber": "16",
+    "isoCountryCode": "ASM",
+    "countryName": "AMERICAN SAMOA"
+  },
+  {
+    "isoCountryNumber": "10",
+    "isoCountryCode": "ATA",
+    "countryName": "ANTARCTICA"
+  },
+  {
+    "isoCountryNumber": "260",
+    "isoCountryCode": "ATF",
+    "countryName": "FRENCH SOUTHERN TERRITORIES"
+  },
+  {
+    "isoCountryNumber": "28",
+    "isoCountryCode": "ATG",
+    "countryName": "ANTIGUA AND BARBUDA"
+  },
+  {
+    "isoCountryNumber": "36",
+    "isoCountryCode": "AUS",
+    "countryName": "AUSTRALIA"
+  },
+  {
+    "isoCountryNumber": "40",
+    "isoCountryCode": "AUT",
+    "countryName": "AUSTRIA"
+  },
+  {
+    "isoCountryNumber": "31",
+    "isoCountryCode": "AZE",
+    "countryName": "AZERBAIJAN"
+  },
+  {
+    "isoCountryNumber": "108",
+    "isoCountryCode": "BDI",
+    "countryName": "BURUNDI"
+  },
+  {
+    "isoCountryNumber": "56",
+    "isoCountryCode": "BEL",
+    "countryName": "BELGIUM"
+  },
+  {
+    "isoCountryNumber": "204",
+    "isoCountryCode": "BEN",
+    "countryName": "BENIN"
+  },
+  {
+    "isoCountryNumber": "535",
+    "isoCountryCode": "BES",
+    "countryName": "BONAIRE, SINT EUSTATIUS AND SABA"
+  },
+  {
+    "isoCountryNumber": "854",
+    "isoCountryCode": "BFA",
+    "countryName": "BURKINA FASO"
+  },
+  {
+    "isoCountryNumber": "50",
+    "isoCountryCode": "BGD",
+    "countryName": "BANGLADESH"
+  },
+  {
+    "isoCountryNumber": "100",
+    "isoCountryCode": "BGR",
+    "countryName": "BULGARIA"
+  },
+  {
+    "isoCountryNumber": "48",
+    "isoCountryCode": "BHR",
+    "countryName": "BAHRAIN"
+  },
+  {
+    "isoCountryNumber": "44",
+    "isoCountryCode": "BHS",
+    "countryName": "BAHAMAS"
+  },
+  {
+    "isoCountryNumber": "70",
+    "isoCountryCode": "BIH",
+    "countryName": "BOSNIA AND HERZEGOVINA"
+  },
+  {
+    "isoCountryNumber": "652",
+    "isoCountryCode": "BLM",
+    "countryName": "SAINT BARTHELEMY"
+  },
+  {
+    "isoCountryNumber": "112",
+    "isoCountryCode": "BLR",
+    "countryName": "BELARUS"
+  },
+  {
+    "isoCountryNumber": "84",
+    "isoCountryCode": "BLZ",
+    "countryName": "BELIZE"
+  },
+  {
+    "isoCountryNumber": "60",
+    "isoCountryCode": "BMU",
+    "countryName": "BERMUDA"
+  },
+  {
+    "isoCountryNumber": "68",
+    "isoCountryCode": "BOL",
+    "countryName": "BOLIVIA, PLURINATIONAL STATE OF"
+  },
+  {
+    "isoCountryNumber": "76",
+    "isoCountryCode": "BRA",
+    "countryName": "BRAZIL"
+  },
+  {
+    "isoCountryNumber": "52",
+    "isoCountryCode": "BRB",
+    "countryName": "BARBADOS"
+  },
+  {
+    "isoCountryNumber": "96",
+    "isoCountryCode": "BRN",
+    "countryName": "BRUNEI DARUSSALAM"
+  },
+  {
+    "isoCountryNumber": "64",
+    "isoCountryCode": "BTN",
+    "countryName": "BHUTAN"
+  },
+  {
+    "isoCountryNumber": "74",
+    "isoCountryCode": "BVT",
+    "countryName": "BOUVET ISLAND"
+  },
+  {
+    "isoCountryNumber": "72",
+    "isoCountryCode": "BWA",
+    "countryName": "BOTSWANA"
+  },
+  {
+    "isoCountryNumber": "140",
+    "isoCountryCode": "CAF",
+    "countryName": "CENTRAL AFRICAN REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "124",
+    "isoCountryCode": "CAN",
+    "countryName": "CANADA"
+  },
+  {
+    "isoCountryNumber": "166",
+    "isoCountryCode": "CCK",
+    "countryName": "COCOS (KEELING) ISLANDS"
+  },
+  {
+    "isoCountryNumber": "756",
+    "isoCountryCode": "CHE",
+    "countryName": "SWITZERLAND"
+  },
+  {
+    "isoCountryNumber": "152",
+    "isoCountryCode": "CHL",
+    "countryName": "CHILE"
+  },
+  {
+    "isoCountryNumber": "156",
+    "isoCountryCode": "CHN",
+    "countryName": "CHINA"
+  },
+  {
+    "isoCountryNumber": "384",
+    "isoCountryCode": "CIV",
+    "countryName": "COTE D'IVOIRE"
+  },
+  {
+    "isoCountryNumber": "120",
+    "isoCountryCode": "CMR",
+    "countryName": "CAMEROON"
+  },
+  {
+    "isoCountryNumber": "180",
+    "isoCountryCode": "COD",
+    "countryName": "CONGO, THE DEMOCRATIC REPUBLIC OF THE"
+  },
+  {
+    "isoCountryNumber": "178",
+    "isoCountryCode": "COG",
+    "countryName": "CONGO"
+  },
+  {
+    "isoCountryNumber": "184",
+    "isoCountryCode": "COK",
+    "countryName": "COOK ISLANDS"
+  },
+  {
+    "isoCountryNumber": "174",
+    "isoCountryCode": "COM",
+    "countryName": "COMOROS"
+  },
+  {
+    "isoCountryNumber": "901",
+    "isoCountryCode": "CPT",
+    "countryName": "CLIPPERTON ISLAND"
+  },
+  {
+    "isoCountryNumber": "132",
+    "isoCountryCode": "CPV",
+    "countryName": "CAPE VERDE"
+  },
+  {
+    "isoCountryNumber": "188",
+    "isoCountryCode": "CRI",
+    "countryName": "COSTA RICA"
+  },
+  {
+    "isoCountryNumber": "200",
+    "isoCountryCode": "CSK",
+    "countryName": "CZECHOSLOVAKIA"
+  },
+  {
+    "isoCountryNumber": "531",
+    "isoCountryCode": "CUW",
+    "countryName": "CURACAO"
+  },
+  {
+    "isoCountryNumber": "162",
+    "isoCountryCode": "CXR",
+    "countryName": "CHRISTMAS ISLAND"
+  },
+  {
+    "isoCountryNumber": "136",
+    "isoCountryCode": "CYM",
+    "countryName": "CAYMAN ISLANDS"
+  },
+  {
+    "isoCountryNumber": "196",
+    "isoCountryCode": "CYP",
+    "countryName": "CYPRUS"
+  },
+  {
+    "isoCountryNumber": "203",
+    "isoCountryCode": "CZE",
+    "countryName": "CZECH REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "276",
+    "isoCountryCode": "DEU",
+    "countryName": "GERMANY"
+  },
+  {
+    "isoCountryNumber": "902",
+    "isoCountryCode": "DGA",
+    "countryName": "DIEGO GARCIA"
+  },
+  {
+    "isoCountryNumber": "262",
+    "isoCountryCode": "DJI",
+    "countryName": "DJIBOUTI"
+  },
+  {
+    "isoCountryNumber": "212",
+    "isoCountryCode": "DMA",
+    "countryName": "DOMINICA"
+  },
+  {
+    "isoCountryNumber": "208",
+    "isoCountryCode": "DNK",
+    "countryName": "DENMARK"
+  },
+  {
+    "isoCountryNumber": "214",
+    "isoCountryCode": "DOM",
+    "countryName": "DOMINICAN REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "12",
+    "isoCountryCode": "DZA",
+    "countryName": "ALGERIA"
+  },
+  {
+    "isoCountryNumber": "218",
+    "isoCountryCode": "ECU",
+    "countryName": "ECUADOR"
+  },
+  {
+    "isoCountryNumber": "818",
+    "isoCountryCode": "EGY",
+    "countryName": "EGYPT"
+  },
+  {
+    "isoCountryNumber": "232",
+    "isoCountryCode": "ERI",
+    "countryName": "ERITREA"
+  },
+  {
+    "isoCountryNumber": "732",
+    "isoCountryCode": "ESH",
+    "countryName": "WESTERN SAHARA"
+  },
+  {
+    "isoCountryNumber": "724",
+    "isoCountryCode": "ESP",
+    "countryName": "SPAIN"
+  },
+  {
+    "isoCountryNumber": "233",
+    "isoCountryCode": "EST",
+    "countryName": "ESTONIA"
+  },
+  {
+    "isoCountryNumber": "231",
+    "isoCountryCode": "ETH",
+    "countryName": "ETHIOPIA"
+  },
+  {
+    "isoCountryNumber": "246",
+    "isoCountryCode": "FIN",
+    "countryName": "FINLAND"
+  },
+  {
+    "isoCountryNumber": "242",
+    "isoCountryCode": "FJI",
+    "countryName": "FIJI"
+  },
+  {
+    "isoCountryNumber": "238",
+    "isoCountryCode": "FLK",
+    "countryName": "FALKLAND ISLANDS (MALVINAS)"
+  },
+  {
+    "isoCountryNumber": "250",
+    "isoCountryCode": "FRA",
+    "countryName": "FRANCE"
+  },
+  {
+    "isoCountryNumber": "234",
+    "isoCountryCode": "FRO",
+    "countryName": "FAROE ISLANDS"
+  },
+  {
+    "isoCountryNumber": "583",
+    "isoCountryCode": "FSM",
+    "countryName": "MICRONESIA, FEDERATED STATES OF"
+  },
+  {
+    "isoCountryNumber": "266",
+    "isoCountryCode": "GAB",
+    "countryName": "GABON"
+  },
+  {
+    "isoCountryNumber": "826",
+    "isoCountryCode": "GBR",
+    "countryName": "UNITED KINGDOM"
+  },
+  {
+    "isoCountryNumber": "268",
+    "isoCountryCode": "GEO",
+    "countryName": "GEORGIA"
+  },
+  {
+    "isoCountryNumber": "831",
+    "isoCountryCode": "GGY",
+    "countryName": "GUERNSEY"
+  },
+  {
+    "isoCountryNumber": "288",
+    "isoCountryCode": "GHA",
+    "countryName": "GHANA"
+  },
+  {
+    "isoCountryNumber": "292",
+    "isoCountryCode": "GIB",
+    "countryName": "GIBRALTAR"
+  },
+  {
+    "isoCountryNumber": "324",
+    "isoCountryCode": "GIN",
+    "countryName": "GUINEA"
+  },
+  {
+    "isoCountryNumber": "312",
+    "isoCountryCode": "GLP",
+    "countryName": "GUADELOUPE"
+  },
+  {
+    "isoCountryNumber": "270",
+    "isoCountryCode": "GMB",
+    "countryName": "GAMBIA"
+  },
+  {
+    "isoCountryNumber": "624",
+    "isoCountryCode": "GNB",
+    "countryName": "GUINEA-BISSAU"
+  },
+  {
+    "isoCountryNumber": "226",
+    "isoCountryCode": "GNQ",
+    "countryName": "EQUATORIAL GUINEA"
+  },
+  {
+    "isoCountryNumber": "300",
+    "isoCountryCode": "GRC",
+    "countryName": "GREECE"
+  },
+  {
+    "isoCountryNumber": "308",
+    "isoCountryCode": "GRD",
+    "countryName": "GRENADA"
+  },
+  {
+    "isoCountryNumber": "304",
+    "isoCountryCode": "GRL",
+    "countryName": "GREENLAND"
+  },
+  {
+    "isoCountryNumber": "320",
+    "isoCountryCode": "GTM",
+    "countryName": "GUATEMALA"
+  },
+  {
+    "isoCountryNumber": "254",
+    "isoCountryCode": "GUF",
+    "countryName": "FRENCH GUIANA"
+  },
+  {
+    "isoCountryNumber": "316",
+    "isoCountryCode": "GUM",
+    "countryName": "GUAM"
+  },
+  {
+    "isoCountryNumber": "328",
+    "isoCountryCode": "GUY",
+    "countryName": "GUYANA"
+  },
+  {
+    "isoCountryNumber": "344",
+    "isoCountryCode": "HKG",
+    "countryName": "HONG KONG"
+  },
+  {
+    "isoCountryNumber": "334",
+    "isoCountryCode": "HMD",
+    "countryName": "HEARD ISLAND AND MCDONALD ISLANDS"
+  },
+  {
+    "isoCountryNumber": "340",
+    "isoCountryCode": "HND",
+    "countryName": "HONDURAS"
+  },
+  {
+    "isoCountryNumber": "191",
+    "isoCountryCode": "HRV",
+    "countryName": "CROATIA"
+  },
+  {
+    "isoCountryNumber": "332",
+    "isoCountryCode": "HTI",
+    "countryName": "HAITI"
+  },
+  {
+    "isoCountryNumber": "348",
+    "isoCountryCode": "HUN",
+    "countryName": "HUNGARY"
+  },
+  {
+    "isoCountryNumber": "360",
+    "isoCountryCode": "IDN",
+    "countryName": "INDONESIA"
+  },
+  {
+    "isoCountryNumber": "833",
+    "isoCountryCode": "IMN",
+    "countryName": "ISLE OF MAN"
+  },
+  {
+    "isoCountryNumber": "356",
+    "isoCountryCode": "IND",
+    "countryName": "INDIA"
+  },
+  {
+    "isoCountryNumber": "86",
+    "isoCountryCode": "IOT",
+    "countryName": "BRITISH INDIAN OCEAN TERRITORY"
+  },
+  {
+    "isoCountryNumber": "372",
+    "isoCountryCode": "IRL",
+    "countryName": "IRELAND"
+  },
+  {
+    "isoCountryNumber": "364",
+    "isoCountryCode": "IRN",
+    "countryName": "IRAN, ISLAMIC REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "368",
+    "isoCountryCode": "IRQ",
+    "countryName": "IRAQ"
+  },
+  {
+    "isoCountryNumber": "352",
+    "isoCountryCode": "ISL",
+    "countryName": "ICELAND"
+  },
+  {
+    "isoCountryNumber": "376",
+    "isoCountryCode": "ISR",
+    "countryName": "ISRAEL"
+  },
+  {
+    "isoCountryNumber": "380",
+    "isoCountryCode": "ITA",
+    "countryName": "ITALY"
+  },
+  {
+    "isoCountryNumber": "388",
+    "isoCountryCode": "JAM",
+    "countryName": "JAMAICA"
+  },
+  {
+    "isoCountryNumber": "832",
+    "isoCountryCode": "JEY",
+    "countryName": "JERSEY"
+  },
+  {
+    "isoCountryNumber": "400",
+    "isoCountryCode": "JOR",
+    "countryName": "JORDAN"
+  },
+  {
+    "isoCountryNumber": "392",
+    "isoCountryCode": "JPN",
+    "countryName": "JAPAN"
+  },
+  {
+    "isoCountryNumber": "398",
+    "isoCountryCode": "KAZ",
+    "countryName": "KAZAKHSTAN"
+  },
+  {
+    "isoCountryNumber": "404",
+    "isoCountryCode": "KEN",
+    "countryName": "KENYA"
+  },
+  {
+    "isoCountryNumber": "417",
+    "isoCountryCode": "KGZ",
+    "countryName": "KYRGYZSTAN"
+  },
+  {
+    "isoCountryNumber": "116",
+    "isoCountryCode": "KHM",
+    "countryName": "CAMBODIA"
+  },
+  {
+    "isoCountryNumber": "296",
+    "isoCountryCode": "KIR",
+    "countryName": "KIRIBATI"
+  },
+  {
+    "isoCountryNumber": "659",
+    "isoCountryCode": "KNA",
+    "countryName": "SAINT KITTS AND NEVIS"
+  },
+  {
+    "isoCountryNumber": "410",
+    "isoCountryCode": "KOR",
+    "countryName": "KOREA, REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "414",
+    "isoCountryCode": "KWT",
+    "countryName": "KUWAIT"
+  },
+  {
+    "isoCountryNumber": "418",
+    "isoCountryCode": "LAO",
+    "countryName": "LAO PEOPLE'S DEMOCRATIC REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "422",
+    "isoCountryCode": "LBN",
+    "countryName": "LEBANON"
+  },
+  {
+    "isoCountryNumber": "430",
+    "isoCountryCode": "LBR",
+    "countryName": "LIBERIA"
+  },
+  {
+    "isoCountryNumber": "434",
+    "isoCountryCode": "LBY",
+    "countryName": "LIBYA"
+  },
+  {
+    "isoCountryNumber": "662",
+    "isoCountryCode": "LCA",
+    "countryName": "SAINT LUCIA"
+  },
+  {
+    "isoCountryNumber": "438",
+    "isoCountryCode": "LIE",
+    "countryName": "LIECHTENSTEIN"
+  },
+  {
+    "isoCountryNumber": "144",
+    "isoCountryCode": "LKA",
+    "countryName": "SRI LANKA"
+  },
+  {
+    "isoCountryNumber": "426",
+    "isoCountryCode": "LSO",
+    "countryName": "LESOTHO"
+  },
+  {
+    "isoCountryNumber": "440",
+    "isoCountryCode": "LTU",
+    "countryName": "LITHUANIA"
+  },
+  {
+    "isoCountryNumber": "442",
+    "isoCountryCode": "LUX",
+    "countryName": "LUXEMBOURG"
+  },
+  {
+    "isoCountryNumber": "428",
+    "isoCountryCode": "LVA",
+    "countryName": "LATVIA"
+  },
+  {
+    "isoCountryNumber": "446",
+    "isoCountryCode": "MAC",
+    "countryName": "MACAO"
+  },
+  {
+    "isoCountryNumber": "663",
+    "isoCountryCode": "MAF",
+    "countryName": "SAINT MARTIN (FRENCH PART)"
+  },
+  {
+    "isoCountryNumber": "504",
+    "isoCountryCode": "MAR",
+    "countryName": "MOROCCO"
+  },
+  {
+    "isoCountryNumber": "492",
+    "isoCountryCode": "MCO",
+    "countryName": "MONACO"
+  },
+  {
+    "isoCountryNumber": "498",
+    "isoCountryCode": "MDA",
+    "countryName": "MOLDOVA, REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "450",
+    "isoCountryCode": "MDG",
+    "countryName": "MADAGASCAR"
+  },
+  {
+    "isoCountryNumber": "462",
+    "isoCountryCode": "MDV",
+    "countryName": "MALDIVES"
+  },
+  {
+    "isoCountryNumber": "584",
+    "isoCountryCode": "MHL",
+    "countryName": "MARSHALL ISLANDS"
+  },
+  {
+    "isoCountryNumber": "807",
+    "isoCountryCode": "MKD",
+    "countryName": "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "466",
+    "isoCountryCode": "MLI",
+    "countryName": "MALI"
+  },
+  {
+    "isoCountryNumber": "470",
+    "isoCountryCode": "MLT",
+    "countryName": "MALTA"
+  },
+  {
+    "isoCountryNumber": "104",
+    "isoCountryCode": "MMR",
+    "countryName": "MYANMAR"
+  },
+  {
+    "isoCountryNumber": "499",
+    "isoCountryCode": "MNE",
+    "countryName": "MONTENEGRO"
+  },
+  {
+    "isoCountryNumber": "496",
+    "isoCountryCode": "MNG",
+    "countryName": "MONGOLIA"
+  },
+  {
+    "isoCountryNumber": "580",
+    "isoCountryCode": "MNP",
+    "countryName": "NORTHERN MARIANA ISLANDS"
+  },
+  {
+    "isoCountryNumber": "508",
+    "isoCountryCode": "MOZ",
+    "countryName": "MOZAMBIQUE"
+  },
+  {
+    "isoCountryNumber": "478",
+    "isoCountryCode": "MRT",
+    "countryName": "MAURITANIA"
+  },
+  {
+    "isoCountryNumber": "500",
+    "isoCountryCode": "MSR",
+    "countryName": "MONTSERRAT"
+  },
+  {
+    "isoCountryNumber": "474",
+    "isoCountryCode": "MTQ",
+    "countryName": "MARTINIQUE"
+  },
+  {
+    "isoCountryNumber": "480",
+    "isoCountryCode": "MUS",
+    "countryName": "MAURITIUS"
+  },
+  {
+    "isoCountryNumber": "454",
+    "isoCountryCode": "MWI",
+    "countryName": "MALAWI"
+  },
+  {
+    "isoCountryNumber": "458",
+    "isoCountryCode": "MYS",
+    "countryName": "MALAYSIA"
+  },
+  {
+    "isoCountryNumber": "175",
+    "isoCountryCode": "MYT",
+    "countryName": "MAYOTTE"
+  },
+  {
+    "isoCountryNumber": "516",
+    "isoCountryCode": "NAM",
+    "countryName": "NAMIBIA"
+  },
+  {
+    "isoCountryNumber": "540",
+    "isoCountryCode": "NCL",
+    "countryName": "NEW CALEDONIA"
+  },
+  {
+    "isoCountryNumber": "562",
+    "isoCountryCode": "NER",
+    "countryName": "NIGER"
+  },
+  {
+    "isoCountryNumber": "574",
+    "isoCountryCode": "NFK",
+    "countryName": "NORFOLK ISLAND"
+  },
+  {
+    "isoCountryNumber": "566",
+    "isoCountryCode": "NGA",
+    "countryName": "NIGERIA"
+  },
+  {
+    "isoCountryNumber": "570",
+    "isoCountryCode": "NIU",
+    "countryName": "NIUE"
+  },
+  {
+    "isoCountryNumber": "528",
+    "isoCountryCode": "NLD",
+    "countryName": "NETHERLANDS"
+  },
+  {
+    "isoCountryNumber": "578",
+    "isoCountryCode": "NOR",
+    "countryName": "NORWAY"
+  },
+  {
+    "isoCountryNumber": "524",
+    "isoCountryCode": "NPL",
+    "countryName": "NEPAL"
+  },
+  {
+    "isoCountryNumber": "520",
+    "isoCountryCode": "NRU",
+    "countryName": "NAURU"
+  },
+  {
+    "isoCountryNumber": "536",
+    "isoCountryCode": "NTZ",
+    "countryName": "NEUTRAL ZONE"
+  },
+  {
+    "isoCountryNumber": "554",
+    "isoCountryCode": "NZL",
+    "countryName": "NEW ZEALAND"
+  },
+  {
+    "isoCountryNumber": "512",
+    "isoCountryCode": "OMN",
+    "countryName": "OMAN"
+  },
+  {
+    "isoCountryNumber": "586",
+    "isoCountryCode": "PAK",
+    "countryName": "PAKISTAN"
+  },
+  {
+    "isoCountryNumber": "591",
+    "isoCountryCode": "PAN",
+    "countryName": "PANAMA"
+  },
+  {
+    "isoCountryNumber": "612",
+    "isoCountryCode": "PCN",
+    "countryName": "PITCAIRN"
+  },
+  {
+    "isoCountryNumber": "903",
+    "isoCountryCode": "PCZ",
+    "countryName": "PANAMA CANAL ZONE"
+  },
+  {
+    "isoCountryNumber": "608",
+    "isoCountryCode": "PHL",
+    "countryName": "PHILIPPINES"
+  },
+  {
+    "isoCountryNumber": "585",
+    "isoCountryCode": "PLW",
+    "countryName": "PALAU"
+  },
+  {
+    "isoCountryNumber": "598",
+    "isoCountryCode": "PNG",
+    "countryName": "PAPUA NEW GUINEA"
+  },
+  {
+    "isoCountryNumber": "616",
+    "isoCountryCode": "POL",
+    "countryName": "POLAND"
+  },
+  {
+    "isoCountryNumber": "630",
+    "isoCountryCode": "PRI",
+    "countryName": "PUERTO RICO"
+  },
+  {
+    "isoCountryNumber": "408",
+    "isoCountryCode": "PRK",
+    "countryName": "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "620",
+    "isoCountryCode": "PRT",
+    "countryName": "PORTUGAL"
+  },
+  {
+    "isoCountryNumber": "600",
+    "isoCountryCode": "PRY",
+    "countryName": "PARAGUAY"
+  },
+  {
+    "isoCountryNumber": "275",
+    "isoCountryCode": "PSE",
+    "countryName": "PALESTINIAN TERRITORY, OCCUPIED"
+  },
+  {
+    "isoCountryNumber": "258",
+    "isoCountryCode": "PYF",
+    "countryName": "FRENCH POLYNESIA"
+  },
+  {
+    "isoCountryNumber": "634",
+    "isoCountryCode": "QAT",
+    "countryName": "QATAR"
+  },
+  {
+    "isoCountryNumber": "638",
+    "isoCountryCode": "REU",
+    "countryName": "REUNION"
+  },
+  {
+    "isoCountryNumber": "900",
+    "isoCountryCode": "RKS",
+    "countryName": "KOSOVO"
+  },
+  {
+    "isoCountryNumber": "642",
+    "isoCountryCode": "ROU",
+    "countryName": "ROMANIA"
+  },
+  {
+    "isoCountryNumber": "643",
+    "isoCountryCode": "RUS",
+    "countryName": "RUSSIAN FEDERATION"
+  },
+  {
+    "isoCountryNumber": "646",
+    "isoCountryCode": "RWA",
+    "countryName": "RWANDA"
+  },
+  {
+    "isoCountryNumber": "682",
+    "isoCountryCode": "SAU",
+    "countryName": "SAUDI ARABIA"
+  },
+  {
+    "isoCountryNumber": "891",
+    "isoCountryCode": "SCG",
+    "countryName": "SERBIA AND MONTENEGRO"
+  },
+  {
+    "isoCountryNumber": "729",
+    "isoCountryCode": "SDN",
+    "countryName": "SUDAN"
+  },
+  {
+    "isoCountryNumber": "686",
+    "isoCountryCode": "SEN",
+    "countryName": "SENEGAL"
+  },
+  {
+    "isoCountryNumber": "702",
+    "isoCountryCode": "SGP",
+    "countryName": "SINGAPORE"
+  },
+  {
+    "isoCountryNumber": "239",
+    "isoCountryCode": "SGS",
+    "countryName": "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS"
+  },
+  {
+    "isoCountryNumber": "654",
+    "isoCountryCode": "SHN",
+    "countryName": "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA"
+  },
+  {
+    "isoCountryNumber": "744",
+    "isoCountryCode": "SJM",
+    "countryName": "SVALBARD AND JAN MAYEN"
+  },
+  {
+    "isoCountryNumber": "90",
+    "isoCountryCode": "SLB",
+    "countryName": "SOLOMON ISLANDS"
+  },
+  {
+    "isoCountryNumber": "694",
+    "isoCountryCode": "SLE",
+    "countryName": "SIERRA LEONE"
+  },
+  {
+    "isoCountryNumber": "222",
+    "isoCountryCode": "SLV",
+    "countryName": "EL SALVADOR"
+  },
+  {
+    "isoCountryNumber": "674",
+    "isoCountryCode": "SMR",
+    "countryName": "SAN MARINO"
+  },
+  {
+    "isoCountryNumber": "706",
+    "isoCountryCode": "SOM",
+    "countryName": "SOMALIA"
+  },
+  {
+    "isoCountryNumber": "666",
+    "isoCountryCode": "SPM",
+    "countryName": "SAINT PIERRE AND MIQUELON"
+  },
+  {
+    "isoCountryNumber": "688",
+    "isoCountryCode": "SRB",
+    "countryName": "SERBIA"
+  },
+  {
+    "isoCountryNumber": "728",
+    "isoCountryCode": "SSD",
+    "countryName": "SOUTH SUDAN"
+  },
+  {
+    "isoCountryNumber": "678",
+    "isoCountryCode": "STP",
+    "countryName": "SAO TOME AND PRINCIPE"
+  },
+  {
+    "isoCountryNumber": "810",
+    "isoCountryCode": "SUN",
+    "countryName": "UNION OF SOVIET SOCIALIST REPUBLICS (USSR)"
+  },
+  {
+    "isoCountryNumber": "740",
+    "isoCountryCode": "SUR",
+    "countryName": "SURINAME"
+  },
+  {
+    "isoCountryNumber": "703",
+    "isoCountryCode": "SVK",
+    "countryName": "SLOVAKIA"
+  },
+  {
+    "isoCountryNumber": "705",
+    "isoCountryCode": "SVN",
+    "countryName": "SLOVENIA"
+  },
+  {
+    "isoCountryNumber": "752",
+    "isoCountryCode": "SWE",
+    "countryName": "SWEDEN"
+  },
+  {
+    "isoCountryNumber": "748",
+    "isoCountryCode": "SWZ",
+    "countryName": "SWAZILAND"
+  },
+  {
+    "isoCountryNumber": "534",
+    "isoCountryCode": "SXM",
+    "countryName": "SINT MAARTEN (DUTCH PART)"
+  },
+  {
+    "isoCountryNumber": "690",
+    "isoCountryCode": "SYC",
+    "countryName": "SEYCHELLES"
+  },
+  {
+    "isoCountryNumber": "760",
+    "isoCountryCode": "SYR",
+    "countryName": "SYRIAN ARAB REPUBLIC"
+  },
+  {
+    "isoCountryNumber": "796",
+    "isoCountryCode": "TCA",
+    "countryName": "TURKS AND CAICOS ISLANDS"
+  },
+  {
+    "isoCountryNumber": "148",
+    "isoCountryCode": "TCD",
+    "countryName": "CHAD"
+  },
+  {
+    "isoCountryNumber": "768",
+    "isoCountryCode": "TGO",
+    "countryName": "TOGO"
+  },
+  {
+    "isoCountryNumber": "764",
+    "isoCountryCode": "THA",
+    "countryName": "THAILAND"
+  },
+  {
+    "isoCountryNumber": "762",
+    "isoCountryCode": "TJK",
+    "countryName": "TAJIKISTAN"
+  },
+  {
+    "isoCountryNumber": "772",
+    "isoCountryCode": "TKL",
+    "countryName": "TOKELAU"
+  },
+  {
+    "isoCountryNumber": "795",
+    "isoCountryCode": "TKM",
+    "countryName": "TURKMENISTAN"
+  },
+  {
+    "isoCountryNumber": "626",
+    "isoCountryCode": "TLS",
+    "countryName": "TIMOR-LESTE"
+  },
+  {
+    "isoCountryNumber": "776",
+    "isoCountryCode": "TON",
+    "countryName": "TONGA"
+  },
+  {
+    "isoCountryNumber": "780",
+    "isoCountryCode": "TTO",
+    "countryName": "TRINIDAD AND TOBAGO"
+  },
+  {
+    "isoCountryNumber": "788",
+    "isoCountryCode": "TUN",
+    "countryName": "TUNISIA"
+  },
+  {
+    "isoCountryNumber": "792",
+    "isoCountryCode": "TUR",
+    "countryName": "TURKEY"
+  },
+  {
+    "isoCountryNumber": "798",
+    "isoCountryCode": "TUV",
+    "countryName": "TUVALU"
+  },
+  {
+    "isoCountryNumber": "158",
+    "isoCountryCode": "TWN",
+    "countryName": "TAIWAN, PROVINCE OF CHINA"
+  },
+  {
+    "isoCountryNumber": "834",
+    "isoCountryCode": "TZA",
+    "countryName": "TANZANIA, UNITED REPUBLIC OF"
+  },
+  {
+    "isoCountryNumber": "800",
+    "isoCountryCode": "UGA",
+    "countryName": "UGANDA"
+  },
+  {
+    "isoCountryNumber": "804",
+    "isoCountryCode": "UKR",
+    "countryName": "UKRAINE"
+  },
+  {
+    "isoCountryNumber": "581",
+    "isoCountryCode": "UMI",
+    "countryName": "UNITED STATES MINOR OUTLYING ISLANDS"
+  },
+  {
+    "isoCountryNumber": "858",
+    "isoCountryCode": "URY",
+    "countryName": "URUGUAY"
+  },
+  {
+    "isoCountryNumber": "840",
+    "isoCountryCode": "USA",
+    "countryName": "UNITED STATES"
+  },
+  {
+    "isoCountryNumber": "860",
+    "isoCountryCode": "UZB",
+    "countryName": "UZBEKISTAN"
+  },
+  {
+    "isoCountryNumber": "336",
+    "isoCountryCode": "VAT",
+    "countryName": "HOLY SEE (VATICAN CITY STATE)"
+  },
+  {
+    "isoCountryNumber": "670",
+    "isoCountryCode": "VCT",
+    "countryName": "SAINT VINCENT AND THE GRENADINES"
+  },
+  {
+    "isoCountryNumber": "92",
+    "isoCountryCode": "VGB",
+    "countryName": "VIRGIN ISLANDS, BRITISH"
+  },
+  {
+    "isoCountryNumber": "850",
+    "isoCountryCode": "VIR",
+    "countryName": "VIRGIN ISLANDS, U.S."
+  },
+  {
+    "isoCountryNumber": "704",
+    "isoCountryCode": "VNM",
+    "countryName": "VIETNAM"
+  },
+  {
+    "isoCountryNumber": "548",
+    "isoCountryCode": "VUT",
+    "countryName": "VANUATU"
+  },
+  {
+    "isoCountryNumber": "876",
+    "isoCountryCode": "WLF",
+    "countryName": "WALLIS AND FUTUNA"
+  },
+  {
+    "isoCountryNumber": "882",
+    "isoCountryCode": "WSM",
+    "countryName": "SAMOA"
+  },
+  {
+    "isoCountryNumber": "887",
+    "isoCountryCode": "YEM",
+    "countryName": "YEMEN"
+  },
+  {
+    "isoCountryNumber": "890",
+    "isoCountryCode": "YUG",
+    "countryName": "YUGOSLAVIA"
+  },
+  {
+    "isoCountryNumber": "710",
+    "isoCountryCode": "ZAF",
+    "countryName": "SOUTH AFRICA"
+  },
+  {
+    "isoCountryNumber": "180",
+    "isoCountryCode": "ZAR",
+    "countryName": "ZAIRE"
+  },
+  {
+    "isoCountryNumber": "894",
+    "isoCountryCode": "ZMB",
+    "countryName": "ZAMBIA"
+  },
+  {
+    "isoCountryNumber": "716",
+    "isoCountryCode": "ZWE",
+    "countryName": "ZIMBABWE"
+  },
+  {
+    "isoCountryNumber": "-1",
+    "isoCountryCode": "XXX",
+    "countryName": "UNKNOWN"
+  }
+]

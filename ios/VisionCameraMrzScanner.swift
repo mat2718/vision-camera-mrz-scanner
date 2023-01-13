@@ -98,6 +98,10 @@ public class VisionCameraMrzScanner: NSObject, FrameProcessorPluginBase {
         return [
           "x": frameRect.midX + (frameRect.midX - x),
           "y": frameRect.midY + (y - frameRect.midY),
+          "top": frameRect.maxY,
+          "left": frameRect.maxX,
+          "right": frameRect.minX,
+          "bottom": frameRect.minY,
           "width": frameRect.width,
           "height": frameRect.height,
           "boundingCenterX": frameRect.midX,
