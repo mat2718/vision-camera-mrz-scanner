@@ -19,6 +19,10 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   enableMRZFeedBack,
   numberOfQAChecks,
   enableBoundingBox,
+  mrzFeedbackCompletedColor,
+  mrzFeedbackUncompletedColor,
+  mrzFeedbackContainer,
+  mrzFeedbackTextStyle,
 }) => {
   //*****************************************************************************************
   //  setting up the state
@@ -146,9 +150,9 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
       numOfChecks = numQAChecks;
     }
     if (completedQAChecks === numOfChecks) {
-      return 'rgba(53,94,59,1.0)';
+      return mrzFeedbackCompletedColor ?? 'rgba(53,94,59,1.0)';
     } else {
-      return 'white';
+      return mrzFeedbackUncompletedColor ?? 'white';
     }
   };
 
@@ -234,46 +238,100 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
         enableBoundingBox={enableBoundingBox}
       />
       {enableMRZFeedBack ? (
-        <View style={styles.feedbackContainer}>
+        <View style={[styles.feedbackContainer, mrzFeedbackContainer]}>
           <View style={styles.flexRow}>
-            <Text style={[styles.feedbackText, styles.givenNamesQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.givenNamesQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Given name ${givenNamesQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.lastNamesQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.lastNamesQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Last name ${lastNamesQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.dobQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.dobQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`DOB ${dobQAList.length} / ${numQAChecks}`}
             </Text>
           </View>
           <View style={styles.flexRow}>
-            <Text style={[styles.feedbackText, styles.nationalityQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.nationalityQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Nationality ${nationalityQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.idNumberQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.idNumberQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`ID Number ${idNumberQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.issuingCountryQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.issuingCountryQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Issuing Country ${issuingCountryQAList.length} / ${numQAChecks}`}
             </Text>
           </View>
           <View style={styles.flexRow}>
-            <Text style={[styles.feedbackText, styles.docExpirationDateQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.docExpirationDateQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Expiration Date ${docExpirationDateQAList.length} / ${numQAChecks}`}
             </Text>
             <Text
-              style={[styles.feedbackText, styles.additionalInformationQAList]}>
+              style={[
+                styles.feedbackText,
+                styles.additionalInformationQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Additional Info ${additionalInformationQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.docMRZQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.docMRZQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`DocMRZ ${docMRZQAList.length} / ${1}`}
             </Text>
           </View>
           <View style={styles.flexRow}>
-            <Text style={[styles.feedbackText, styles.genderQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.genderQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`Gender ${genderQAList.length} / ${numQAChecks}`}
             </Text>
-            <Text style={[styles.feedbackText, styles.docTypeQAList]}>
+            <Text
+              style={[
+                styles.feedbackText,
+                styles.docTypeQAList,
+                mrzFeedbackTextStyle,
+              ]}>
               {`DocType ${docTypeQAList.length} / ${numQAChecks}`}
             </Text>
           </View>

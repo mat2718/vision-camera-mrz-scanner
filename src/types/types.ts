@@ -69,6 +69,10 @@ export type MRZScannerProps = MRZCameraProps & {
    * @default 3
    */
   numberOfQAChecks?: number;
+  mrzFeedbackCompletedColor?: string;
+  mrzFeedbackUncompletedColor?: string;
+  mrzFeedbackContainer?: StyleProp<ViewStyle>;
+  mrzFeedbackTextStyle?: StyleProp<ViewStyle>;
 };
 
 export type BoundingFrame = {
