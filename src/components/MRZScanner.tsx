@@ -229,7 +229,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
         }}
         scanSuccess={scanSuccess}
         skipButtonText={skipButtonText}
-        style={[style]}
+        style={[style ? style : StyleSheet.absoluteFill]}
         skipButtonEnabled={skipButtonEnabled}
         skipButtonStyle={skipButtonStyle}
         skipButton={skipButton}
