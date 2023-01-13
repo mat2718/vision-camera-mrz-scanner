@@ -88,7 +88,7 @@ export const parseMRZ = (initialLines: string[]) => {
             lastLine.length < 37)
         ) {
           return parse2LineMRZ(lastLine, currentLine);
-          // return parse([lastLine, currentLine]);
+          // return parse([lastLine, currentLine]).fields;
         }
       }
     }
