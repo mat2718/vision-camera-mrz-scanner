@@ -1,22 +1,24 @@
-import { NativeModules, Platform } from 'react-native';
+// entry file for the application
 
-const LINKING_ERROR =
-  `The package 'vision-camera-mrz-scanner' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+// types.ts
+export type {
+  BoundingFrame,
+  MRZFrame,
+  Point,
+  Text,
+  TextBlock,
+  TextElement,
+  TextLine,
+  MRZCameraProps,
+  MRZScannerProps,
+} from './types/types';
 
-const VisionCameraMrzScanner = NativeModules.VisionCameraMrzScanner
-  ? NativeModules.VisionCameraMrzScanner
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+// components
+export {default as MRZCamera} from './components/MRZCamera';
+export {default as MRZScanner} from './components/MRZScanner';
 
-export function multiply(a: number, b: number): Promise<number> {
-  return VisionCameraMrzScanner.multiply(a, b);
-}
+// resolutions.ts
+export {findClosest, sortFormatsByResolution} from './util/generalUtil';
+
+// wrapper.ts
+export {default as scanMRZ} from './util/wrapper';

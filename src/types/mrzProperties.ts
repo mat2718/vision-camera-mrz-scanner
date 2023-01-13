@@ -1,0 +1,45 @@
+export type MRZProperties = {
+  docMRZ: string;
+  docType?:
+    | 'ADIT_STAMP'
+    | 'ALIEN_REGISTRATION'
+    | 'BIRTH_CERTIFICATE'
+    | 'BORDER_CROSSING_CARD'
+    | 'CEDULA'
+    | 'CERTIFICATE_OF_NATURALIZATION'
+    | 'CITIZENSHIP_CARD'
+    | 'DRIVERS_LICENSE'
+    | 'DSP150_FORM'
+    | 'EMPLOYEE_AUTHORIZATION'
+    | 'GOVERNMENT_ISSUED_ID'
+    | 'I512'
+    | 'I551'
+    | 'I94'
+    | 'INTERPOL_NOTICE'
+    | 'MILITARY_CARD'
+    | 'NATIONAL_ID'
+    | 'OTHER'
+    | 'PASSPORT'
+    | 'REENTRY_PERMIT'
+    | 'REFUGEE_PERMIT'
+    | 'REFUGEE_TRAVEL_DOCUMENT'
+    | 'REFUGEE_ASYLEE'
+    | 'TRANSPORTATION_LETTER'
+    | 'TRIBAL_CARD'
+    | 'TRUSTED_TRAVELER_CARD'
+    | 'VISA'
+    | 'VOTER_REGISTRATION'
+    | 'ADVANCE_PAROLE_DOCUMENT'
+    | 'EMPLOYEE_AUTHORIZATION_DOCUMENT'
+    | 'PERMANENT_RESIDENT_CARD'
+    | 'REFUGEE_TRAVEL_DOCUMENT_REENTRY_PERMIT';
+  issuingCountry?: string;
+  givenNames?: string;
+  lastNames?: string;
+  idNumber?: string;
+  nationality?: string;
+  dob?: string;
+  gender?: string;
+  docExpirationDate?: string;
+  additionalInformation?: string;
+};
