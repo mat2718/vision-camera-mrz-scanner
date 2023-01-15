@@ -34,7 +34,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "bob build",
     "prepack": "bob build",
-    "release": "release-it",
+    "release": "dotenv release-it --",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
@@ -72,6 +72,7 @@
     "@types/react-native": "^0.70.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
+    "dotenv-cli": "^6.0.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -138,6 +139,6 @@
   },
   "dependencies": {
     "mrz": "^3.2.1",
-    "react-native-reanimated": "2.10.0"
+    "react-native-reanimated": ">= 2"
   }
 }

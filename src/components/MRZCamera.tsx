@@ -9,6 +9,8 @@ import React, {
 } from 'react';
 import {
   Button,
+  LayoutChangeEvent,
+  PixelRatio,
   StyleProp,
   StyleSheet,
   Text,
@@ -67,6 +69,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   const [ocrElements, setOcrElements] = useState<BoundingFrame[]>([]);
   const [frameDimensions, setFrameDimensions] = useState<Dimensions>();
   const landscapeMode = screenWidth > screenHeight;
+  const [pixelRatio, setPixelRatio] = React.useState<number>(1);
 
   //*****************************************************************************************
   // Comp Logic
@@ -127,18 +130,14 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       if (!scanning) {
         setScanning(true);
         if (data && data.result && data.result.blocks.length > 0) {
-          console.log('data.result.blocks: ', data.result.blocks);
           let lines: string[] = [];
           data.result.blocks.forEach(block => {
             lines.push(block.text);
           });
           if (lines.length > 0 && isActive && onData) {
-            console.log('lines: ', lines);
-            console.log('updatedOCRElements: ', updatedOCRElements);
             setOcrElements(updatedOCRElements);
             onData(lines);
           } else {
-            console.log('why am i here?');
             setOcrElements([]);
           }
         }
@@ -185,6 +184,8 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
     [screenWidth, screenHeight],
   );
 
+  const bounds = ocrElements[ocrElements.length - 1];
+
   //*****************************************************************************************
   // stylesheet
   //*****************************************************************************************
@@ -221,10 +222,10 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       borderWidth: 3,
       borderColor: 'yellow',
       position: 'absolute',
-      // left: ocrElements[0] ? ocrElements[0].x - horizontalOffset : 0,
-      // top: ocrElements[0] ? ocrElements[0].y - verticalOffset : 0,
-      // height: ocrElements[0] ? ocrElements[0].height + heightPadding : 0,
-      // width: ocrElements[0] ? ocrElements[0].width + widthPadding : 0,
+      left: bounds ? bounds.x * pixelRatio : 0,
+      top: bounds ? bounds.y * pixelRatio : 0,
+      height: bounds ? bounds.height : 35,
+      width: bounds ? bounds.width : 35,
     },
   });
 
@@ -264,10 +265,18 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
             cameraProps?.onFrameProcessorPerformanceSuggestionAvailable
           }
           frameProcessor={cameraProps?.frameProcessor ?? frameProcessor}
-          frameProcessorFps={cameraProps?.frameProcessorFps ?? 10}
+          frameProcessorFps={cameraProps?.frameProcessorFps ?? 30}
+          onLayout={(event: LayoutChangeEvent) => {
+            setPixelRatio(
+              event.nativeEvent.layout.width /
+                PixelRatio.getPixelSizeForLayoutSize(
+                  event.nativeEvent.layout.width,
+                ),
+            );
+          }}
         />
       ) : undefined}
-      <View style={[styles.boundingBox]} />
+      {/* <View style={[styles.boundingBox]} /> */}
       {enableBoundingBox && ocrElements.length > 0 ? (
         <View style={boundingStyle} testID="faceDetectionBoxView">
           {frameDimensions &&

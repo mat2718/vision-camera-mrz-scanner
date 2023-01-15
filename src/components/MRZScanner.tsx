@@ -13,7 +13,6 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   skipButtonStyle,
   cameraProps,
   onData,
-  scanSuccess,
   skipButtonText,
   mrzFinalResults,
   enableMRZFeedBack,
@@ -29,6 +28,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   //*****************************************************************************************
 
   const numQAChecks = numberOfQAChecks ?? 3;
+  const [scanSuccess, setScanSuccess] = useState(false);
   const [docMRZQAList, setDocMRZQAList] = useState<(string | undefined)[]>([]);
   const [docTypeQAList, setDocTypeQAList] = useState<(string | undefined)[]>(
     [],
@@ -222,6 +222,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
             const mrzResults = parseMRZ(lines);
             if (mrzResults) {
               if (currentMRZMatchesPreviousMRZs(numQAChecks, mrzResults)) {
+                setScanSuccess(true);
                 mrzFinalResults(mrzResults);
               }
             }
