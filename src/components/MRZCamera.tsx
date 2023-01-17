@@ -127,7 +127,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       });
 
       /* Scanning the text from the image and then setting the state of the component. */
-      if (!scanning) {
+      if (!scanning && !scanSuccess) {
         setScanning(true);
         if (data && data.result && data.result.blocks.length > 0) {
           let lines: string[] = [];
