@@ -35,7 +35,6 @@ export const boundingBoxAdjustToView =
         verticalPadding?: number,
         horizontalPadding?: number,
       ) => {
-        'worklet';
         const {width, height} = view;
         /* Calculating the aspect ratio of the view. */
         const aspectRatio = width / height;

@@ -100,6 +100,7 @@ private fun getFrame(boundingBox: Rect?): WritableNativeMap {
     return frame
 }
 
+@SuppressLint("NewApi")
 override fun callback(frame: ImageProxy, params: Array<Any>): Any? {
 
     val result = WritableNativeMap()

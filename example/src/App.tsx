@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import {StyleSheet, View} from 'react-native';
 import {useCameraDevices} from 'react-native-vision-camera';
@@ -9,6 +9,12 @@ export default function App() {
   const devices = useCameraDevices();
   const device = devices.back;
   const [isActive, setIsActive] = useState(true);
+
+  useEffect(() => {
+    return () => {
+      setIsActive(false);
+    };
+  }, []);
 
   return (
     <View style={styles.container}>

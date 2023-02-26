@@ -127,25 +127,22 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       });
 
       /* Scanning the text from the image and then setting the state of the component. */
-      if (!scanning && !scanSuccess) {
-        setScanning(true);
-        if (data && data.result && data.result.blocks.length > 0) {
-          let lines: string[] = [];
-          data.result.blocks.forEach(block => {
-            lines.push(block.text);
-          });
-          if (lines.length > 0 && isActive && onData) {
-            setOcrElements(updatedOCRElements);
-            onData(lines);
-          } else {
-            setOcrElements([]);
-          }
+      setScanning(true);
+      if (data && data.result && data.result.blocks.length > 0) {
+        let lines: string[] = [];
+        data.result.blocks.forEach(block => {
+          lines.push(block.text);
+        });
+        if (lines.length > 0 && isActive && onData) {
+          setOcrElements(updatedOCRElements);
+          onData(lines);
+        } else {
+          setOcrElements([]);
         }
       }
       setScanning(false);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [scanSuccess, scanning, screenWidth, onData],
+    [isActive, landscapeMode, onData, screenWidth],
   );
 
   /* Setting the format to the first format in the formats array. */
@@ -158,9 +155,10 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   const frameProcessor = useFrameProcessor(
     frame => {
       'worklet';
-
-      const ocrData = scanMRZ(frame);
-      runOnJS(handleScan)(ocrData, frame);
+      if (!scanning && !scanSuccess) {
+        const ocrData = scanMRZ(frame);
+        runOnJS(handleScan)(ocrData, frame);
+      }
     },
     [handleScan],
   );
