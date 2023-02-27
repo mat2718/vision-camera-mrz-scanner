@@ -65,7 +65,6 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   const {height: screenHeight, width: screenWidth} = useWindowDimensions();
   const [isActive, setIsActive] = useState(true);
   const [feedbackText, setFeedbackText] = useState<string>('');
-  const [scanning, setScanning] = useState(false);
   const [ocrElements, setOcrElements] = useState<BoundingFrame[]>([]);
   const [frameDimensions, setFrameDimensions] = useState<Dimensions>();
   const landscapeMode = screenWidth > screenHeight;
@@ -127,7 +126,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
       });
 
       /* Scanning the text from the image and then setting the state of the component. */
-      setScanning(true);
+
       if (data && data.result && data.result.blocks.length > 0) {
         let lines: string[] = [];
         data.result.blocks.forEach(block => {
@@ -140,7 +139,6 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
           setOcrElements([]);
         }
       }
-      setScanning(false);
     },
     [isActive, landscapeMode, onData, screenWidth],
   );
@@ -155,7 +153,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   const frameProcessor = useFrameProcessor(
     frame => {
       'worklet';
-      if (!scanning && !scanSuccess) {
+      if (!scanSuccess) {
         const ocrData = scanMRZ(frame);
         runOnJS(handleScan)(ocrData, frame);
       }

@@ -25,5 +25,5 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": ["docs"]
+  "exclude": ["docs", "assets"]
 }

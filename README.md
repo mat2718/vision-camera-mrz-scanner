@@ -4,6 +4,10 @@ VisionCamera Frame Processor Plugin to detect and read MRZ data from passports u
 
 - A helper function has been added for those using headers or footers to adjust the bounding box parameters. A working example using React-native 0.70.6 and updated reanimated and vision camera packages are located here: [example](https://github.com/mat2718/vision-camera-mrz-scanner/tree/main/example)
 
+<p align="center">
+ <img src = "assets/MRZScanner.gif" alt="Vision Camera MRZ Scanner" height="400" />
+</p>
+
 ## Installation & Configuration
 
 ### Install
