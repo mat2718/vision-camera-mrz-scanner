@@ -111,23 +111,32 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
               height: frame.height,
             },
       );
-      if (data.result.blocks.length === 0) {
+      if (
+        data &&
+        data.result &&
+        data.result.blocks &&
+        data.result.blocks.length === 0
+      ) {
         setFeedbackText('');
       }
-
-      let updatedOCRElements: BoundingFrame[] = [];
-      data.result.blocks.forEach(block => {
-        if (block.frame.width / screenWidth < 0.8) {
-          setFeedbackText('Hold Still');
-        } else {
-          setFeedbackText('Scanning...');
-        }
-        updatedOCRElements.push({...block.frame});
-      });
-
       /* Scanning the text from the image and then setting the state of the component. */
 
-      if (data && data.result && data.result.blocks.length > 0) {
+      if (
+        data &&
+        data.result &&
+        data.result.blocks &&
+        data.result.blocks.length > 0
+      ) {
+        let updatedOCRElements: BoundingFrame[] = [];
+        data.result.blocks.forEach(block => {
+          if (block.frame.width / screenWidth < 0.8) {
+            setFeedbackText('Hold Still');
+          } else {
+            setFeedbackText('Scanning...');
+          }
+          updatedOCRElements.push({...block.frame});
+        });
+
         let lines: string[] = [];
         data.result.blocks.forEach(block => {
           lines.push(block.text);
