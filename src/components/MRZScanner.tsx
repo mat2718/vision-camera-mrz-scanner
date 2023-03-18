@@ -1,4 +1,4 @@
-import React, {FC, PropsWithChildren, useState} from 'react';
+import React, {FC, PropsWithChildren, useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {MRZCamera, MRZScannerProps} from 'vision-camera-mrz-scanner';
 
@@ -22,6 +22,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   mrzFeedbackUncompletedColor,
   mrzFeedbackContainer,
   mrzFeedbackTextStyle,
+  isActiveCamera,
 }) => {
   //*****************************************************************************************
   //  setting up the state
@@ -53,8 +54,15 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
   const [docExpirationDateQAList, setDocExpirationDateQAList] = useState<
     (string | undefined)[]
   >([]);
+  const [isActive, setIsActive] = useState(true);
   const [additionalInformationQAList, setAdditionalInformationQAList] =
     useState<(string | undefined)[]>([]);
+
+  useEffect(() => {
+    return () => {
+      setIsActive(false);
+    };
+  }, []);
 
   /**
    * If all elements in list match element, add the new element.
@@ -223,6 +231,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
             if (mrzResults) {
               if (currentMRZMatchesPreviousMRZs(numQAChecks, mrzResults)) {
                 setScanSuccess(true);
+                setIsActive(false);
                 mrzFinalResults(mrzResults);
               }
             }
@@ -237,6 +246,7 @@ const MRZScanner: FC<PropsWithChildren<MRZScannerProps>> = ({
         onSkipPressed={onSkipPressed}
         cameraProps={cameraProps}
         enableBoundingBox={enableBoundingBox}
+        isActiveCamera={isActiveCamera ?? isActive} // if isActiveCamera is not defined, use the internal state
       />
       {enableMRZFeedBack ? (
         <View style={[styles.feedbackContainer, mrzFeedbackContainer]}>

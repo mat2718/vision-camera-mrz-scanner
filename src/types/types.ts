@@ -51,6 +51,7 @@ export type MRZCameraProps = {
   onData?: (OCRResults: string[]) => void | Promise<void>;
   scanSuccess?: boolean;
   cameraDirection?: 'front' | 'back'; // defaults to back
+  isActiveCamera?: boolean;
 };
 
 export type MRZScannerProps = MRZCameraProps & {

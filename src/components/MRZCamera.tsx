@@ -51,6 +51,7 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
   scanSuccess,
   skipButtonText,
   cameraDirection,
+  isActiveCamera,
 }) => {
   //*****************************************************************************************
   //  setting up the state
@@ -245,7 +246,13 @@ const MRZCamera: FC<PropsWithChildren<MRZCameraProps>> = ({
           style={cameraProps?.style ?? StyleSheet.absoluteFill}
           device={cameraProps?.device ?? device}
           torch={cameraProps?.torch}
-          isActive={cameraProps?.isActive ?? isActive}
+          isActive={
+            isActiveCamera
+              ? isActiveCamera
+              : cameraProps?.isActive
+              ? cameraProps?.isActive
+              : isActive
+          }
           ref={camera}
           photo={cameraProps?.photo}
           video={cameraProps?.video}
